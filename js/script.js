@@ -34,8 +34,6 @@ const name = ["John", "doe"];
 //   }, 2000); // Waits for 2 seconds
 // });
 
-
-
 const btnElement = document.getElementById("btn");
 
 btnElement.addEventListener("click", () => {
@@ -48,7 +46,7 @@ btnElement.addEventListener("click", () => {
       } else {
         reject("Fail");
       }
-    }, 2000); 
+    }, 2000);
   });
 
   myPromise
@@ -57,3 +55,9 @@ btnElement.addEventListener("click", () => {
     .finally(() => console.log("settled"));
 });
 
+
+// fetch method
+const data = fetch("https://catfact.ninja/facts?limit=20&page=4")
+  .then((responsive) => responsive.json())
+  .then((data) => console.log(data.data))
+  .catch((err) => console.error(err));
