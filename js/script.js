@@ -35,7 +35,6 @@ const name = ["John", "doe"];
 // });
 
 const btnElement = document.getElementById("btn");
-
 btnElement.addEventListener("click", () => {
   const myPromise = new Promise((resolve, reject) => {
     const success = true;
@@ -55,9 +54,15 @@ btnElement.addEventListener("click", () => {
     .finally(() => console.log("settled"));
 });
 
-
 // fetch method
-const data = fetch("https://catfact.ninja/facts?limit=20&page=4")
-  .then((responsive) => responsive.json())
-  .then((data) => console.log(data.data))
+fetch("https://catfact.ninja/facts?limit=20&page=4")
+  .then((response) => response.json())
+  .then((data) => {
+    const container = document.getElementById("cat-facts-container");
+    data.data.forEach((fact) => {
+      const factDiv = document.createElement("div");
+      factDiv.textContent = fact.fact;
+      container.appendChild(factDiv);
+    });
+  })
   .catch((err) => console.error(err));
