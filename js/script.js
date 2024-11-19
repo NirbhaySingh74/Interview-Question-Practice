@@ -111,28 +111,71 @@ function work() {
 
 // **     Async Callback ***
 
-function fetchData(callback) {
-  console.log("Fetching Data");
-  setTimeout(() => {
-    const data = { id: 1, name: "Nirbhay" };
-    callback(data);
-  }, 4000);
-}
+// function fetchData(callback) {
+//   console.log("Fetching Data");
+//   setTimeout(() => {
+//     const data = { id: 1, name: "Nirbhay" };
+//     callback(data);
+//   }, 4000);
+// }
 function printData({ id, name }) {
   console.log("id", id);
   console.log("name", name);
 }
 // fetchData(printData);
 
-setTimeout(() => {
-  console.log("step 1");
-  setTimeout(() => {
-    console.log("step 2");
+// setTimeout(() => {
+//   console.log("step 1");
+//   setTimeout(() => {
+//     console.log("step 2");
+//     setTimeout(() => {
+//       console.log("step 3");
+//       setTimeout(() => {
+//         console.log("step 4");
+//       }, 1000);
+//     }, 1000);
+//   }, 1000);
+// }, 1000);
+
+// **        PROMISE ****
+
+// const fetchData = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     fetch("https://dummyjson.com/test")
+//       .then((response) => response.json())
+//       .then((data) => resolve(data));
+//   }, 2000);
+// });
+
+// fetchData.then((data) => console.log(data));
+
+function getUserData(userId) {
+  return new Promise((resolve, reject) => {
+    console.log("Fetching user data...");
     setTimeout(() => {
-      console.log("step 3");
-      setTimeout(() => {
-        console.log("step 4");
-      }, 1000);
-    }, 1000);
-  }, 1000);
-}, 1000);
+      const success = Math.random() > 0.3;
+      if (success) {
+        resolve({
+          id: userId,
+          name: "Nirbhay Singh",
+          age: 21,
+          email: "nirbhaysingh943012@gmail.com",
+        });
+      } else {
+        reject(new Error("Failed to fetch user data."));
+      }
+    }, 2000);
+  });
+}
+
+getUserData(101)
+  .then((user) => {
+    console.log("user data retrives:", user);
+    return user.email;
+  })
+  .then((email) => {
+    console.log(`User's email is: ${email}`);
+  })
+  .catch((error) => {
+    console.error("Error", error.message);
+  });
