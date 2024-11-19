@@ -118,8 +118,21 @@ function fetchData(callback) {
     callback(data);
   }, 4000);
 }
-function printData({id, name}) {
+function printData({ id, name }) {
   console.log("id", id);
   console.log("name", name);
 }
-fetchData(printData);
+// fetchData(printData);
+
+setTimeout(() => {
+  console.log("step 1");
+  setTimeout(() => {
+    console.log("step 2");
+    setTimeout(() => {
+      console.log("step 3");
+      setTimeout(() => {
+        console.log("step 4");
+      }, 1000);
+    }, 1000);
+  }, 1000);
+}, 1000);
