@@ -107,4 +107,19 @@ function work() {
   console.log(`Hii, I'm Software Developer`);
 }
 
-name("Nirbhay", work);
+// name("Nirbhay", work);
+
+// **     Async Callback ***
+
+function fetchData(callback) {
+  console.log("Fetching Data");
+  setTimeout(() => {
+    const data = { id: 1, name: "Nirbhay" };
+    callback(data);
+  }, 4000);
+}
+function printData({id, name}) {
+  console.log("id", id);
+  console.log("name", name);
+}
+fetchData(printData);
