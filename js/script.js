@@ -67,7 +67,44 @@
 //   })
 //   .catch((err) => console.error(err));
 
-console.log("starting");
-import { num } from "./app.js";
+// console.log("starting");
+// import { num } from "./app.js";
 
-console.log(num);
+// console.log(num);
+
+// function add() {
+//     var a = 10; // function or global scope
+//     let b = 20; // block scope
+// }
+// add()
+// console.log(a); // 10
+// console.log(b); // ReferenceError: b is not defined
+// console.log(a); // undefined
+// var a = 10;
+
+// console.log(b); // ReferenceError: Cannot access 'b' before initialization
+// let b = 20;
+
+//  ******        CALLBACK FUNCTION     ******
+
+function greet(name, callback) {
+  console.log(`hello ${name}`);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye");
+}
+
+// greet("Nirbhay", sayGoodbye);
+
+function name(name, callback) {
+  console.log(`Hello ${name} What do you do?`);
+  callback();
+}
+
+function work() {
+  console.log(`Hii, I'm Software Developer`);
+}
+
+name("Nirbhay", work);
