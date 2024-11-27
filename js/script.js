@@ -149,33 +149,34 @@ function printData({ id, name }) {
 
 // fetchData.then((data) => console.log(data));
 
-function getUserData(userId) {
-  return new Promise((resolve, reject) => {
-    console.log("Fetching user data...");
-    setTimeout(() => {
-      const success = Math.random() > 0.3;
-      if (success) {
-        resolve({
-          id: userId,
-          name: "Nirbhay Singh",
-          age: 21,
-          email: "nirbhaysingh943012@gmail.com",
-        });
-      } else {
-        reject(new Error("Failed to fetch user data."));
-      }
-    }, 2000);
-  });
-}
+// function getUserData(userId) {
+//   return new Promise((resolve, reject) => {
+//     console.log("Fetching user data...");
+//     setTimeout(() => {
+//       const success = Math.random() > 0.3;
+//       if (success) {
+//         resolve({
+//           id: userId,
+//           name: "Nirbhay Singh",
+//           age: 21,
+//           email: "nirbhaysingh943012@gmail.com",
+//         });
+//       } else {
+//         reject(new Error("Failed to fetch user data."));
+//       }
+//     }, 2000);
+//   });
+// }
 
-getUserData(101)
-  .then((user) => {
-    console.log("user data retrives:", user);
-    return user.email;
-  })
-  .then((email) => {
-    console.log(`User's email is: ${email}`);
-  })
-  .catch((error) => {
-    console.error("Error", error.message);
-  });
+// getUserData(101)
+//   .then((user) => {
+//     console.log("user data retrives:", user);
+//     return user.email;
+//   })
+//   .then((email) => {
+//     console.log(`User's email is: ${email}`);
+//   })
+//   .catch((error) => {
+//     console.error("Error", error.message);
+//   });
+        

@@ -31,14 +31,34 @@
 //   }, 1000);
 // }, 1000);
 
-const myPromise = new Promise((resolve, rejaect) => {
-  if (true) {
-    return resolve("success");
-  } else {
-    return rejaect("failed");
-  }
+// const myPromise = new Promise((resolve, rejaect) => {
+//   if (true) {
+//     return resolve("success");
+//   } else {
+//     return rejaect("failed");
+//   }
+// });
+
+// myPromise.then((data) => console.log(data)).catch((err) => console.log(err));
+
+// console.log('true');
+
+
+const promise = new Promise((resolve, reject) => {
+  console.log(1);
+  setTimeout(() => {
+    console.log("timerStart");
+    resolve("success");
+    console.log("timerEnd");
+  }, 0);
+  console.log(2);
 });
 
-myPromise.then((data) => console.log(data)).catch((err) => console.log(err));
+promise.then((res) => {
+  console.log(res);
+});
 
-console.log('true');
+console.log(4);
+
+
+// ANS :4, 1,"TIMESTART","timerend"
