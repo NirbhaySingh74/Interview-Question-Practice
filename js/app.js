@@ -44,21 +44,29 @@
 // console.log('true');
 
 
-const promise = new Promise((resolve, reject) => {
-  console.log(1);
-  setTimeout(() => {
-    console.log("timerStart");
-    resolve("success");
-    console.log("timerEnd");
-  }, 0);
-  console.log(2);
-});
+// const promise = new Promise((resolve, reject) => {
+//   console.log(1);
+//   setTimeout(() => {
+//     console.log("timerStart");
+//     resolve("success");
+//     console.log("timerEnd");
+//   }, 0);
+//   console.log(2);
+// });
 
-promise.then((res) => {
-  console.log(res);
-});
+// promise.then((res) => {
+//   console.log(res);
+// });
 
-console.log(4);
+// console.log(4);
 
 
-// ANS :4, 1,"TIMESTART","timerend"
+console.log('start')
+
+setTimeout(() => {
+  console.log('setTimeout')
+})
+Promise.resolve().then(() => {
+  console.log('resolve')
+})
+console.log('end')
