@@ -179,4 +179,10 @@ function printData({ id, name }) {
 //   .catch((error) => {
 //     console.error("Error", error.message);
 //   });
-        
+
+// console.log("hii");
+
+function foo() {
+  return foo();
+}
+foo();
