@@ -182,7 +182,21 @@ function printData({ id, name }) {
 
 // console.log("hii");
 
+// function foo() {
+//   return foo();
+// }
+// foo();
+
 function foo() {
-  return foo();
+  throw new Error("Oops");
 }
-foo();
+
+function bar() {
+  foo();
+}
+
+function baz() {
+  bar();
+}
+
+baz();
