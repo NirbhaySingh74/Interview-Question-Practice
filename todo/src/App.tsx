@@ -1,9 +1,10 @@
 import "./App.css";
+import Input from "./components/Input";
 
 function App() {
   return (
     <>
-      <h1 className="bg-blue-500">hihi1</h1>
+      <Input />
     </>
   );
 }
