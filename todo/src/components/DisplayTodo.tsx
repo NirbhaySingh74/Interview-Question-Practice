@@ -4,7 +4,6 @@ interface DisplayTodoProps {
   todos: string[];
   deleteTodo: (index: number) => void;
   editTodo: (index: number, updatedTodo: string) => void;
-  editing;
 }
 
 const DisplayTodo: React.FC<DisplayTodoProps> = ({
