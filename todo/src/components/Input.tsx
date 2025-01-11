@@ -15,13 +15,13 @@ const Input: React.FC = () => {
   const deleteTodo = (index: number) => {
     setTodos(todos.filter((_, i) => i !== index));
   };
-
   const editTodo = (index: number, updatedTodo: string) => {
     const updatedTodos = todos.map((item, i) =>
       i === index ? updatedTodo : item
     );
     setTodos(updatedTodos);
   };
+  console.log(todos);
 
   return (
     <div className="flex flex-col items-center p-6 gap-6 bg-gray-100 rounded-lg shadow-lg max-w-lg mx-auto">

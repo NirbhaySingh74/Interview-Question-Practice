@@ -71,6 +71,7 @@ const DisplayTodo: React.FC<DisplayTodoProps> = ({
               >
                 Delete
               </button>
+              {index}
             </>
           )}
         </li>
